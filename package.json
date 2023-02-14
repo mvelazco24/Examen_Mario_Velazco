@@ -1,0 +1,24 @@
+{
+  "name": "examen_mario_velazco",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvelazco24/Examen_Mario_Velazco.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mvelazco24/Examen_Mario_Velazco/issues"
+  },
+  "homepage": "https://github.com/mvelazco24/Examen_Mario_Velazco#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}
