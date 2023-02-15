@@ -41,7 +41,7 @@
       <br><br>
       </head>
 
-    <body class="bg-info">
+    <body class="bg-info" onload="cargarDatosActorPeli()">
       <div class="container bg-light border-info">
           <h1 class="text-center text-info">Formulario Actor por Pel&iacute;cula</h1>
           <br><br>
@@ -51,18 +51,17 @@
               <input type="text" class="form-control" id="id_peli_actor" placeholder="Ingrese el I.D">
             </div>
             <div class="mb-3 mt-3">
-              <label for="fk_id_pelicula_actor" class="form-label">I.D. de la Pel&iacute;cula: </label>
-              <input type="text" class="form-control" id="fk_id_pelicula_actor" placeholder="Ingrese el I.D. de la Pel&iacute;cula">
+              <label for="d_pelicula_actor" class="form-label">I.D. de la Pel&iacute;cula: </label>
+              <input type="text" class="form-control" id="id_pelicula_actor" placeholder="Ingrese el I.D. de la Pel&iacute;cula">
             </div>
             <div class="mb-3">
               <label for="pais_origen_productora" class="form-label">I.D. del Actor/Actriz</label>
               <input type="text" class="form-control" id="fk_id_actor" placeholder="Ingrese I.D. del Actor/Actriz">
             </div>
             <br>
-            <button type="submit" class="btn btn-primary">Registrar</button> 
-            <button type="submit" class="btn btn-success">Consultar</button>
-            <button type="submit" class="btn btn-warning text-light">Modificar</button>
-            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <button type="submit" class="btn btn-primary" onclick="enviarDatosActorPelicula()">Registrar</button> 
+            <button type="submit" class="btn btn-success" onclick="actualizarActorPelicula()">Actualizar</button>
+            <button type="submit" class="btn btn-danger" onclick="eliminarDatosActorPeli()">Eliminar</button>
             <br><br>
           </div>
           </form>

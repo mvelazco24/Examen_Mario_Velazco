@@ -13,15 +13,15 @@ app.use(function (req, res, next) {
 });
 
 //MÉTODOS PARA LA TABLA PRODUCTORA
-app.get('/mvelazco/api/productora/id:', (req, res)=>{
-let con = mysql.createConncection({
-	host: "localhost",
-	user: "desfhyeb_mvelazco",
-	password: "Hola12345$",
-	database: "desfyheb_mvelazco"
-});
+app.get('/mvelazco/api/productora', (req, res)=>{
+let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
 
-let sql = "select * from productora where id_productora = ?";
+let sql = "select * from productora= ?";
 let parametros = [req.params.id];
 
 con.connect(function(err){
@@ -43,12 +43,12 @@ con.connect(function(err){
 });
 
 app.post('/mvelazco/api/productora', (req, res)=>{
-let con = mysql.createConncection({
-	host: "localhost",
-	user: "desfhyeb_mvelazco",
-	password: "Hola12345$",
-	database: "desfyheb_mvelazco"
-});
+let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
 
 let sql = "insert into productora " + "(nombre_productora, pais_origen_productora) " + "values (?, ?)";
 let parametros =[
@@ -75,12 +75,12 @@ con.connect(function(err){
 });
 
 app.put('/mvelazco/api/productora/:id', (req, res)=>{
-let con = mysql.createConncection({
-	host: "localhost",
-	user: "desfhyeb_mvelazco",
-	password: "Hola12345$",
-	database: "desfyheb_mvelazco"
-});
+let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
 
 let sql = "update productora set nombre_productora = ?." + "pais_origen_productora = ? " + "where id_productora = ?";
 let parametros =[
@@ -107,12 +107,12 @@ con.connect(function(err){
 });
 
 app.delete('/mvelazco/api/productora/:id', (req, res)=>{
-let con = mysql.createConncection({
-	host: "localhost",
-	user: "desfhyeb_mvelazco",
-	password: "Hola12345$",
-	database: "desfyheb_mvelazco"
-});
+let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
 
 let sql = "delete from productora where id_productora = ?";
 let parametros =[req.params.id];
@@ -136,12 +136,12 @@ con.connect(function(err){
 });
 
 // MÉTODOS PARA LA TABLA PELÍCULA
-app.get('/mvelazco/api/pelicula/id:', (req, res)=>{
-    let con = mysql.createConncection({
+app.get('/mvelazco/api/pelicula', (req, res)=>{
+let con = mysql.createConnection({
         host: "localhost",
         user: "desfhyeb_mvelazco",
         password: "Hola12345$",
-        database: "desfyheb_mvelazco"
+        database: "desfhyeb_mvelazco"
     });
     
     let sql = "select * from pelicula where id_pelicula = ?";
@@ -166,12 +166,12 @@ app.get('/mvelazco/api/pelicula/id:', (req, res)=>{
     });
 
 app.post('/mvelazco/api/pelicula', (req, res)=>{
-        let con = mysql.createConncection({
-            host: "localhost",
-            user: "desfhyeb_mvelazco",
-            password: "Hola12345$",
-            database: "desfyheb_mvelazco"
-        });
+       let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
         
         let sql = "insert into pelicula " + "(nombre_pelicula, genero_pelicula, duracion_pelicula, clasificacion_pelicula, presupuesto_pelicula, ganancias_taquilla, id_productora) " + "values (?, ?, ?, ?, ?, ?, ?)";
         let parametros =[
@@ -203,12 +203,12 @@ app.post('/mvelazco/api/pelicula', (req, res)=>{
     });
 
 app.put('/mvelazco/api/pelicula/:id', (req, res)=>{
-        let con = mysql.createConncection({
-            host: "localhost",
-            user: "desfhyeb_mvelazco",
-            password: "Hola12345$",
-            database: "desfyheb_mvelazco"
-        });
+       let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
         
         let sql = "update pelicula set nombre_pelicula = ?." + "genero_pelicula = ? " + "duracion_pelicula = ? " + "clasificacion_pelicula = ? " + "presupuesto_pelicula = ? " + "ganancias_taquilla = ? " + "id_productora = ? " + "where id_pelicula = ?";
         let parametros =[
@@ -240,12 +240,12 @@ app.put('/mvelazco/api/pelicula/:id', (req, res)=>{
         });
 
 app.delete('/mvelazco/api/pelicula/:id', (req, res)=>{
-            let con = mysql.createConncection({
-                host: "localhost",
-                user: "desfhyeb_mvelazco",
-                password: "Hola12345$",
-                database: "desfyheb_mvelazco"
-            });
+           let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
             
             let sql = "delete from pelicula where id_pelicula = ?";
             let parametros =[req.params.id];
@@ -269,12 +269,12 @@ app.delete('/mvelazco/api/pelicula/:id', (req, res)=>{
             });
 
 //MÉTODOS PARA LA TABLA ACTOR
-app.get('/mvelazco/api/actor/id:', (req, res)=>{
-    let con = mysql.createConncection({
+app.get('/mvelazco/api/actor', (req, res)=>{
+let con = mysql.createConnection({
         host: "localhost",
         user: "desfhyeb_mvelazco",
         password: "Hola12345$",
-        database: "desfyheb_mvelazco"
+        database: "desfhyeb_mvelazco"
     });
     
     let sql = "select * from actor where id_actor = ?";
@@ -299,12 +299,12 @@ app.get('/mvelazco/api/actor/id:', (req, res)=>{
     });
 
 app.post('/mvelazco/api/actor', (req, res)=>{
-        let con = mysql.createConncection({
-            host: "localhost",
-            user: "desfhyeb_mvelazco",
-            password: "Hola12345$",
-            database: "desfyheb_mvelazco"
-        });
+       let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
         
         let sql = "insert into actor " + "(nombre_actor, apellido_actor, fecha_nacimiento_actor)" + "values (?, ?, ?)";
         let parametros =[
@@ -332,12 +332,12 @@ app.post('/mvelazco/api/actor', (req, res)=>{
     });
 
 app.put('/mvelazco/api/actor/id:', (req, res)=>{
-        let con = mysql.createConncection({
-            host: "localhost",
-            user: "desfhyeb_mvelazco",
-            password: "Hola12345$",
-            database: "desfyheb_mvelazco"
-        });
+       let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
         
         let sql = "update actor set nombre_actor = ?," + "apellido_actor = ?," + " fecha_nacimiento_actor = ? where id_actor = ?";
         let parametros =[
@@ -366,12 +366,12 @@ app.put('/mvelazco/api/actor/id:', (req, res)=>{
     });
 
 app.delete('/mvelazco/api/actor/id:', (req, res)=>{
-        let con = mysql.createConncection({
-            host: "localhost",
-            user: "desfhyeb_mvelazco",
-            password: "Hola12345$",
-            database: "desfyheb_mvelazco"
-        });
+        let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
         
         let sql = "delete from actor where id_actor = ?";
         let parametros = [req.params.id];
@@ -395,12 +395,12 @@ app.delete('/mvelazco/api/actor/id:', (req, res)=>{
         });
 
 //MÉTODOS PARA LA TABLA DIRECTOR
-app.get('/mvelazco/api/director/id:', (req, res)=>{
-    let con = mysql.createConncection({
+app.get('/mvelazco/api/director', (req, res)=>{
+    let con = mysql.createConnection({
         host: "localhost",
         user: "desfhyeb_mvelazco",
         password: "Hola12345$",
-        database: "desfyheb_mvelazco"
+        database: "desfhyeb_mvelazco"
     });
     
     let sql = "select * from director where id_director = ?";
@@ -425,12 +425,12 @@ app.get('/mvelazco/api/director/id:', (req, res)=>{
     });
 
 app.post('/mvelazco/api/director', (req, res)=>{
-        let con = mysql.createConncection({
-            host: "localhost",
-            user: "desfhyeb_mvelazco",
-            password: "Hola12345$",
-            database: "desfyheb_mvelazco"
-        });
+       let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
         
         let sql = "insert into actor " + "(nombre_director, apellido_director, fecha_nacimiento_director)" + "values (?, ?, ?)";
         let parametros =[
@@ -458,12 +458,12 @@ app.post('/mvelazco/api/director', (req, res)=>{
     });
 
 app.put('/mvelazco/api/director/id:', (req, res)=>{
-        let con = mysql.createConncection({
-            host: "localhost",
-            user: "desfhyeb_mvelazco",
-            password: "Hola12345$",
-            database: "desfyheb_mvelazco"
-        });
+        let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
         
         let sql = "update director set nombre_director = ?," + "apellido_director = ?," + " fecha_nacimiento_director = ? where id_director = ?";
         let parametros =[
@@ -492,12 +492,12 @@ app.put('/mvelazco/api/director/id:', (req, res)=>{
     });
 
 app.delete('/mvelazco/api/director/id:', (req, res)=>{
-        let con = mysql.createConncection({
-            host: "localhost",
-            user: "desfhyeb_mvelazco",
-            password: "Hola12345$",
-            database: "desfyheb_mvelazco"
-        });
+        let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
         
         let sql = "delete from actor where id_director = ?";
         let parametros = [req.params.id];
@@ -521,12 +521,12 @@ app.delete('/mvelazco/api/director/id:', (req, res)=>{
         });
 
 //MÉTODOS PARA LA TABLA RECONOCMIENTO
-app.get('/mvelazco/api/reconocimiento/id:', (req, res)=>{
-    let con = mysql.createConncection({
+app.get('/mvelazco/api/reconocimiento', (req, res)=>{
+    let con = mysql.createConnection({
         host: "localhost",
         user: "desfhyeb_mvelazco",
         password: "Hola12345$",
-        database: "desfyheb_mvelazco"
+        database: "desfhyeb_mvelazco"
     });
     
     let sql = "select * from productora where id_reconocimiento = ?";
@@ -550,12 +550,12 @@ app.get('/mvelazco/api/reconocimiento/id:', (req, res)=>{
     
     });
     
-app.post('/mvelazco/api/reconocimiento', (req, res)=>{
-    let con = mysql.createConncection({
+    app.post('/mvelazco/api/reconocimiento', (req, res)=>{
+    let con = mysql.createConnection({
         host: "localhost",
         user: "desfhyeb_mvelazco",
         password: "Hola12345$",
-        database: "desfyheb_mvelazco"
+        database: "desfhyeb_mvelazco"
     });
     
     let sql = "insert into reconocimiento " + "(nombre_reconocimiento, institucion, pais_origen_reconocimiento) " + "values (?, ?, ?)";
@@ -583,12 +583,12 @@ app.post('/mvelazco/api/reconocimiento', (req, res)=>{
     
     });
     
-app.put('/mvelazco/api/reconocimiento/:id', (req, res)=>{
-    let con = mysql.createConncection({
+    app.put('/mvelazco/api/reconocimiento/:id', (req, res)=>{
+    let con = mysql.createConnection({
         host: "localhost",
         user: "desfhyeb_mvelazco",
         password: "Hola12345$",
-        database: "desfyheb_mvelazco"
+        database: "desfhyeb_mvelazco"
     });
     
     let sql = "update productora set nombre_reconocimiento = ?." + "institucion = ?" + "pais_origen_reconocimiento = ? " + "where id_reconocimiento = ?";
@@ -616,12 +616,12 @@ app.put('/mvelazco/api/reconocimiento/:id', (req, res)=>{
     
     });
     
-app.delete('/mvelazco/api/reconocimiento/:id', (req, res)=>{
-    let con = mysql.createConncection({
+    app.delete('/mvelazco/api/reconocimiento/:id', (req, res)=>{
+    let con = mysql.createConnection({
         host: "localhost",
         user: "desfhyeb_mvelazco",
         password: "Hola12345$",
-        database: "desfyheb_mvelazco"
+        database: "desfhyeb_mvelazco"
     });
     
     let sql = "delete from reconocimiento where id_reconocimiento = ?";
@@ -646,13 +646,13 @@ app.delete('/mvelazco/api/reconocimiento/:id', (req, res)=>{
     });
 
     //MÉTODOS PARA LA TABLA ACTOR PELÍCULA
-app.get('/mvelazco/api/actorpelicula/id:', (req, res)=>{
-        let con = mysql.createConncection({
-            host: "localhost",
-            user: "desfhyeb_mvelazco",
-            password: "Hola12345$",
-            database: "desfyheb_mvelazco"
-        });
+app.get('/mvelazco/api/actorpelicula:', (req, res)=>{
+     let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
         
         let sql = "select * from actor_pelicula where id_actor_pelicula = ?";
         let parametros = [req.params.id];
@@ -676,12 +676,12 @@ app.get('/mvelazco/api/actorpelicula/id:', (req, res)=>{
         });
         
 app.post('/mvelazco/api/actorpelicula', (req, res)=>{
-let con = mysql.createConncection({
-    host: "localhost",
-    user: "desfhyeb_mvelazco",
-    password: "Hola12345$",
-    database: "desfyheb_mvelazco"
-});
+let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
 
 let sql = "insert into actor_pelicula " + "(id_pelicula, id_actor) " + "values (?, ?)";
 let parametros =[
@@ -708,12 +708,12 @@ con.connect(function(err){
 });
 
 app.put('/mvelazco/api/actorpelicula/:id', (req, res)=>{
-let con = mysql.createConncection({
-    host: "localhost",
-    user: "desfhyeb_mvelazco",
-    password: "Hola12345$",
-    database: "desfyheb_mvelazco"
-});
+let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
 
 let sql = "update actor_pelicula set id_pelicula = ?." + "id_actor = ? " + "where id_actor_pelicula = ?";
 let parametros =[
@@ -740,12 +740,12 @@ con.connect(function(err){
 });
 
 app.delete('/mvelazco/api/actorpelicula/:id', (req, res)=>{
-let con = mysql.createConncection({
-    host: "localhost",
-    user: "desfhyeb_mvelazco",
-    password: "Hola12345$",
-    database: "desfyheb_mvelazco"
-});
+let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
 
 let sql = "delete from actor_pelicula where id_actor_pelicula = ?";
 let parametros =[req.params.id];
@@ -769,12 +769,12 @@ con.connect(function(err){
 });
 
 // MÉTODOS PARA LA TABLA DIRECTOR PELÍCULA
-app.get('/mvelazco/api/directorpelicula/id:', (req, res)=>{
-    let con = mysql.createConncection({
+app.get('/mvelazco/api/directorpelicula', (req, res)=>{
+   let con = mysql.createConnection({
         host: "localhost",
         user: "desfhyeb_mvelazco",
         password: "Hola12345$",
-        database: "desfyheb_mvelazco"
+        database: "desfhyeb_mvelazco"
     });
     
     let sql = "select * from director_pelicula where id_director_pelicula = ?";
@@ -799,12 +799,12 @@ app.get('/mvelazco/api/directorpelicula/id:', (req, res)=>{
     });
     
 app.post('/mvelazco/api/directorpelicula', (req, res)=>{
-let con = mysql.createConncection({
-host: "localhost",
-user: "desfhyeb_mvelazco",
-password: "Hola12345$",
-database: "desfyheb_mvelazco"
-});
+let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
 
 let sql = "insert into director_pelicula " + "(id_pelicula, id_director) " + "values (?, ?)";
 let parametros =[
@@ -831,12 +831,12 @@ if (err){
 });
 
 app.put('/mvelazco/api/directorpelicula/:id', (req, res)=>{
-let con = mysql.createConncection({
-host: "localhost",
-user: "desfhyeb_mvelazco",
-password: "Hola12345$",
-database: "desfyheb_mvelazco"
-});
+let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
 
 let sql = "update director_pelicula set id_pelicula = ?." + "id_director = ? " + "where id_actor_pelicula = ?";
 let parametros =[
@@ -863,12 +863,12 @@ if (err){
 });
 
 app.delete('/mvelazco/api/directorpelicula/:id', (req, res)=>{
-let con = mysql.createConncection({
-host: "localhost",
-user: "desfhyeb_mvelazco",
-password: "Hola12345$",
-database: "desfyheb_mvelazco"
-});
+let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
 
 let sql = "delete from director_pelicula where id_director_pelicula = ?";
 let parametros =[req.params.id];
@@ -892,12 +892,12 @@ if (err){
 });
 
 //MÉTODOS PARA LA TABLA RECONOCIMIENTO PELICULA
-app.get('/mvelazco/api/reconocimientopelicula/id:', (req, res)=>{
-    let con = mysql.createConncection({
+app.get('/mvelazco/api/reconocimientopelicula', (req, res)=>{
+  let con = mysql.createConnection({
         host: "localhost",
         user: "desfhyeb_mvelazco",
         password: "Hola12345$",
-        database: "desfyheb_mvelazco"
+        database: "desfhyeb_mvelazco"
     });
     
     let sql = "select * from reconocimiento_pelicula where id_reconocimiento_pelicula = ?";
@@ -922,12 +922,12 @@ app.get('/mvelazco/api/reconocimientopelicula/id:', (req, res)=>{
     });
     
 app.post('/mvelazco/api/reconocimientopelicula', (req, res)=>{
-let con = mysql.createConncection({
-host: "localhost",
-user: "desfhyeb_mvelazco",
-password: "Hola12345$",
-database: "desfyheb_mvelazco"
-});
+let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
 
 let sql = "insert into reconocimiento_pelicula " + "(id_pelicula, id_reconocimiento) " + "values (?, ?)";
 let parametros =[
@@ -954,12 +954,12 @@ if (err){
 });
 
 app.put('/mvelazco/api/reconocimientopelicula/:id', (req, res)=>{
-let con = mysql.createConncection({
-host: "localhost",
-user: "desfhyeb_mvelazco",
-password: "Hola12345$",
-database: "desfyheb_mvelazco"
-});
+let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
 
 let sql = "update director_pelicula set id_pelicula = ?." + "id_reconocimiento = ? " + "where id_reconocimiento_pelicula = ?";
 let parametros =[
@@ -986,12 +986,12 @@ if (err){
 });
 
 app.delete('/mvelazco/api/reconocimientopelicula/:id', (req, res)=>{
-let con = mysql.createConncection({
-host: "localhost",
-user: "desfhyeb_mvelazco",
-password: "Hola12345$",
-database: "desfyheb_mvelazco"
-});
+let con = mysql.createConnection({
+        host: "localhost",
+        user: "desfhyeb_mvelazco",
+        password: "Hola12345$",
+        database: "desfhyeb_mvelazco"
+    });
 
 let sql = "delete from reconocimiento_pelicula where id_reconocimiento_pelicula = ?";
 let parametros =[req.params.id];

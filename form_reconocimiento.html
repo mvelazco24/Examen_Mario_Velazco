@@ -41,7 +41,7 @@
       <br><br>
       </head>
 
-    <body class="bg-info">
+    <body class="bg-info" onload="cargarDatosReconocimiento()">
       <div class="container bg-light border-info">
           <h1 class="text-center text-info">Formulario Reconocimientos</h1>
           <br><br>
@@ -60,13 +60,12 @@
               </div>
             <div class="mb-3">
               <label for="pais_origen_reconociiento" class="form-label">Pa&iacute;s de Origen</label>
-              <input type="text" class="form-control" id="pais_origen_reconociiento" placeholder="Ingrese el Pa&iacute;s de Origen">
+              <input type="text" class="form-control" id="pais_origen_reconocimiento" placeholder="Ingrese el Pa&iacute;s de Origen">
             </div>
             <br>
-            <button type="submit" class="btn btn-primary">Registrar</button> 
-            <button type="submit" class="btn btn-success">Consultar</button>
-            <button type="submit" class="btn btn-warning text-light">Modificar</button>
-            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <button type="submit" class="btn btn-primary" onclick="enviarDatosReconocimiento()">Registrar</button> 
+            <button type="submit" class="btn btn-success" onclick="actualizarDatosReconocimiento()">Actualizar</button>
+            <button type="submit" class="btn btn-danger" onclick="eliminarDatosReconocimiento()">Eliminar</button>
             <br><br>
           </div>
           </form>

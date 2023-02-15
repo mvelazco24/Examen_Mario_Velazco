@@ -41,7 +41,7 @@
       <br><br>
       </head>
 
-    <body class="bg-info">
+    <body onload="cargarDatosPelicula()" class="bg-info" >
       <div class="container bg-light border-info">
           <h1 class="text-center text-info">Formulario Pel&iacute;culas</h1>
           <br><br>
@@ -79,10 +79,9 @@
                 <input type="text" class="form-control" id="id_productora" placeholder="Ingrese el I.D de la Productora">
               </div>
             <br>
-            <button type="submit" class="btn btn-primary">Registrar</button> 
-            <button type="submit" class="btn btn-success">Consultar</button>
-            <button type="submit" class="btn btn-warning text-light">Modificar</button>
-            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <button type="submit" class="btn btn-primary" onclick="enviarDatosPelicula()">Registrar</button> 
+            <button type="submit" class="btn btn-success" onclick="actualizarDatosPelicula()">Actualizar</button>
+            <button type="submit" class="btn btn-danger" onclick="eliminarDatosPelicula()">Eliminar</button>
             <br><br>
           </div>
           </form>

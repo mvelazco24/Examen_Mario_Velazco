@@ -41,7 +41,7 @@
       <br><br>
       </head>
 
-    <body class="bg-info">
+    <body class="bg-info" onload="cargarDatosDirector()">
       <div class="container bg-light border-info">
           <h1 class="text-center text-info">Formulario Directores</h1>
           <br><br>
@@ -55,19 +55,18 @@
               <input type="text" class="form-control" id="nombre_director" placeholder="Ingrese el Nombre del Director">
             </div>
             <div class="mb-3 mt-3">
-                <label for="apellido_director" class="form-label">Apellido del Actor/Actriz: </label>
+                <label for="apellido_director" class="form-label">Apellido del Director/Actriz: </label>
                 <input type="text" class="form-control" id="apellido_director" placeholder="Ingrese el Apellido del Director">
               </div>
               <div class="mb-3 mt-3">
                 <label for="nacimiento_director" class="form-label">Fecha de Nacimiento del Director: </label>
-                <input type="date" class="form-control" id="nacimiento_director" placeholder="Ingrese el Apellido del Director">
+                <input type="text" class="form-control" id="nacimiento_director" placeholder="Ingrese la fecha de nacimiento del Director">
               </div>
             
             <br>
-            <button type="submit" class="btn btn-primary">Registrar</button> 
-            <button type="submit" class="btn btn-success">Consultar</button>
-            <button type="submit" class="btn btn-warning text-light">Modificar</button>
-            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <button type="submit" class="btn btn-primary" onclick="enviarDatosDirector()">Registrar</button> 
+            <button type="submit" class="btn btn-success" onclick="actualizarDatosDirector()">Actualizar</button>
+            <button type="submit" class="btn btn-danger" onclick="eliminarDatosDirector()">Eliminar</button>
             <br><br>
           </div>
           </form>
