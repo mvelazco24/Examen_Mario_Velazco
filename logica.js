@@ -189,6 +189,7 @@ function actualizarDatosPelicula(){
         presupuesto_pelicula: $("#presupuesto_pelicula").val(),
         ganancias_taquilla: $("#taquilla_pelicula").val(),
         id_productora: $("#id_productora").val()
+        
     };
 
     let idPelicula= $("#id_pelicula").val();
@@ -529,7 +530,7 @@ function actualizarDatosReconocimiento(){
     jQuery.ajaxSetup({async:false});
 
     var datosForm = {
-        nombre_reconocimiento : $("#nombre_reconocimiento").val(),
+        nombre_reconocimiento : $("#nombre_reconocmiento").val(),
         institucion: $("#institucion").val(),
         pais_origen_reconocimiento : $("#pais_origen_reconocimiento").val()
     };
@@ -590,8 +591,9 @@ function cargarDatosActorPeli(){
         success: function(data){
             for(var i = 0; i < data.length; i++){
                 cuerpoTabla+= " <tr> " 
-                + "<td> " + data[i].id_pelicula + "</td>" 
+                + "<td> " + data[i].id_actor_pelicula + "</td>" 
                 + " <td> " + data[i].id_actor + "</td>"
+                + "<td> " + data[i].id_pelicula + "</td>" 
                   + "</tr>"
 
             }
@@ -701,8 +703,9 @@ function cargarDatosDirectorPeli(){
         success: function(data){
             for(var i = 0; i < data.length; i++){
                 cuerpoTabla+= " <tr> " 
-                + "<td> " + data[i].id_pelicula + "</td>" 
+                + "<td> " + data[i].id_director_pelicula + "</td>" 
                 + " <td> " + data[i].id_director + "</td>"
+                + "<td> " + data[i].id_pelicula + "</td>" 
                   + "</tr>"
 
             }
@@ -716,15 +719,14 @@ function cargarDatosDirectorPeli(){
     })
     
 }
-
-function enviarDatosDirectorPelicula(){
+function enviarDatosDirectorPeli(){
 
     jQuery.ajaxSetup({async:false});
 
    
     var datosForm = {
-        id_pelicula : $("#fk_id_pelicula_director").val(),
-        id_director: $("#fk_id_director").val()
+        id_pelicula : $("#id_pelicula_director").val(),
+        id_director: $("#id_director_peli").val()
     };
 
 
@@ -744,16 +746,15 @@ function enviarDatosDirectorPelicula(){
         contentType: "application/json; charset=utf-8",
         async:false
       });
-      cargarDatosDirectorPeli();
+      cargarDatosActorPeli();
 }
-
-function actualizarDirectorPelicula(){
+function actualizarDirectorPeli(){
 
     jQuery.ajaxSetup({async:false});
 
     var datosForm = {
-        id_pelicula : $("#fk_id_pelicula_director").val(),
-        id_actor: $("#fk_id_director").val()
+        id_pelicula : $("#id_pelicula_director").val(),
+        id_director: $("#id_director_peli").val()
     };
 
     let idPelDirector= $("#id_peli_director").val();
@@ -775,11 +776,11 @@ function actualizarDirectorPelicula(){
         contentType: "application/json; charset=utf-8"
       });
 
-      cargarDatosDirectorPeli();
+      cargarDatosActorPeli();
 
 }
 
-function eliminarDatosActorPeli(){
+function eliminarDatosDirectorPeli(){
 
     jQuery.ajaxSetup({async:false});
 
@@ -812,6 +813,7 @@ function cargarDatosReconocimientoPeli(){
         success: function(data){
             for(var i = 0; i < data.length; i++){
                 cuerpoTabla+= " <tr> " 
+                + "<td> " + data[i].id_reconocimiento_pelicula + "</td>" 
                 + "<td> " + data[i].id_pelicula + "</td>" 
                 + " <td> " + data[i].id_reconocimiento + "</td>"
                   + "</tr>"
@@ -828,7 +830,7 @@ function cargarDatosReconocimientoPeli(){
     
 }
 
-function enviarDatosDirectorPelicula(){
+function enviarDatosReconocimientoPelicula(){
 
     jQuery.ajaxSetup({async:false});
 
@@ -858,13 +860,13 @@ function enviarDatosDirectorPelicula(){
       cargarDatosReconocimientoPeli();
 }
 
-function actualizarDirectorPelicula(){
+function actualizarReconocimientoPelicula(){
 
     jQuery.ajaxSetup({async:false});
 
     var datosForm = {
         id_pelicula : $("#fk_id_pelicula_reconocimiento").val(),
-        id_actor: $("#fk_id_reconocimiento").val()
+        id_reconocimiento: $("#fk_id_reconocimiento").val()
     };
 
     let idPelReconocimiento= $("#id_peli_reconocimiento").val();
@@ -890,7 +892,7 @@ function actualizarDirectorPelicula(){
 
 }
 
-function eliminarDatosActorPeli(){
+function eliminarDatosReconocimientoPeli(){
 
     jQuery.ajaxSetup({async:false});
 
